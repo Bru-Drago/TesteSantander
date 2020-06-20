@@ -219,7 +219,7 @@
                                             <constraint firstAttribute="height" constant="445" id="OOZ-zg-kpu"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="zMs-DC-tdj" customClass="TransactionsTableViewCell" customModule="Teste_BrunaDrago" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transactionCell" rowHeight="100" id="zMs-DC-tdj" customClass="TransactionsTableViewCell" customModule="Teste_BrunaDrago" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zMs-DC-tdj" id="2Rb-VR-1eq">
@@ -321,6 +321,7 @@
                         <outlet property="accountBalanceLabel" destination="bM1-j8-218" id="i6k-vV-IV1"/>
                         <outlet property="accountNumberLabel" destination="dMQ-Jx-R7t" id="fbV-ER-Q2e"/>
                         <outlet property="clientNameLabel" destination="o2i-Hq-Y7c" id="l3h-g1-bEx"/>
+                        <outlet property="tableView" destination="4li-ie-plh" id="6sK-Hb-BrR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVc-Cq-LTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

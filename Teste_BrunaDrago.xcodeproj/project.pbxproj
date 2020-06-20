@@ -20,6 +20,7 @@
 		F52770EF249E5730005C5DF2 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52770EE249E572F005C5DF2 /* TransactionsTableViewCell.swift */; };
 		F5D7ADE9249E7F5800BA1C34 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADE8249E7F5800BA1C34 /* Password.swift */; };
 		F5D7ADEB249E86A700BA1C34 /* UserValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADEA249E86A700BA1C34 /* UserValidation.swift */; };
+		F5D7ADEE249E942800BA1C34 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADED249E942700BA1C34 /* DetailService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F52770EE249E572F005C5DF2 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		F5D7ADE8249E7F5800BA1C34 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		F5D7ADEA249E86A700BA1C34 /* UserValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidation.swift; sourceTree = "<group>"; };
+		F5D7ADED249E942700BA1C34 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		F52770CA249D1302005C5DF2 /* Teste_BrunaDrago */ = {
 			isa = PBXGroup;
 			children = (
+				F5D7ADEC249E93E100BA1C34 /* Service */,
 				F52770ED249E56E1005C5DF2 /* Model */,
 				F52770E8249D2FB0005C5DF2 /* View Controller */,
 				F52770E7249D2F8A005C5DF2 /* Storyboards */,
@@ -97,9 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				F52770E9249D306E005C5DF2 /* LoginViewController.swift */,
+				F52770EB249D3478005C5DF2 /* DetailViewController.swift */,
 				F5D7ADEA249E86A700BA1C34 /* UserValidation.swift */,
 				F5D7ADE8249E7F5800BA1C34 /* Password.swift */,
-				F52770EB249D3478005C5DF2 /* DetailViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -110,6 +113,14 @@
 				F52770EE249E572F005C5DF2 /* TransactionsTableViewCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F5D7ADEC249E93E100BA1C34 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F5D7ADED249E942700BA1C34 /* DetailService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			files = (
 				F5D7ADE9249E7F5800BA1C34 /* Password.swift in Sources */,
 				F52770EA249D306E005C5DF2 /* LoginViewController.swift in Sources */,
+				F5D7ADEE249E942800BA1C34 /* DetailService.swift in Sources */,
 				F5D7ADEB249E86A700BA1C34 /* UserValidation.swift in Sources */,
 				F52770CC249D1302005C5DF2 /* AppDelegate.swift in Sources */,
 				F52770EF249E5730005C5DF2 /* TransactionsTableViewCell.swift in Sources */,
