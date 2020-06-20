@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
      //TODO: - depois de configurar o userdefaults, fazer o logout dele
         
         self.navigationController?.popToRootViewController(animated: true)
+        
     }
     
 

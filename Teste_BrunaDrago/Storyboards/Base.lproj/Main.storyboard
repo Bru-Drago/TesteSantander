@@ -32,7 +32,6 @@
                                 </state>
                                 <connections>
                                     <action selector="doLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYl-u3-r27"/>
-                                    <segue destination="s8R-D6-R8r" kind="show" id="vRa-Ql-u07"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-Dh-icb">
@@ -114,7 +113,7 @@
         <!--Detail View Controller-->
         <scene sceneID="bu7-td-Jy9">
             <objects>
-                <viewController id="s8R-D6-R8r" customClass="DetailViewController" customModule="Teste_BrunaDrago" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="s8R-D6-R8r" customClass="DetailViewController" customModule="Teste_BrunaDrago" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LJ3-5O-cAF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
