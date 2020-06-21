@@ -24,6 +24,7 @@
 		F5D7ADF2249FC54A00BA1C34 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADF1249FC54A00BA1C34 /* LoginData.swift */; };
 		F5D7ADF4249FC5EF00BA1C34 /* GetLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADF3249FC5EF00BA1C34 /* GetLoginData.swift */; };
 		F5D7ADFA249FDD2800BA1C34 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADF9249FDD2800BA1C34 /* extensions.swift */; };
+		F5D7ADFC249FF81400BA1C34 /* SaveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7ADFB249FF81400BA1C34 /* SaveUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		F5D7ADF1249FC54A00BA1C34 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		F5D7ADF3249FC5EF00BA1C34 /* GetLoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLoginData.swift; sourceTree = "<group>"; };
 		F5D7ADF9249FDD2800BA1C34 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		F5D7ADFB249FF81400BA1C34 /* SaveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F52770E9249D306E005C5DF2 /* LoginViewController.swift */,
+				F5D7ADFB249FF81400BA1C34 /* SaveUser.swift */,
 				F52770EB249D3478005C5DF2 /* DetailViewController.swift */,
 				F5D7ADEA249E86A700BA1C34 /* UserValidation.swift */,
 				F5D7ADE8249E7F5800BA1C34 /* Password.swift */,
@@ -213,6 +216,7 @@
 				F5D7ADEE249E942800BA1C34 /* DetailService.swift in Sources */,
 				F5D7ADEB249E86A700BA1C34 /* UserValidation.swift in Sources */,
 				F52770CC249D1302005C5DF2 /* AppDelegate.swift in Sources */,
+				F5D7ADFC249FF81400BA1C34 /* SaveUser.swift in Sources */,
 				F5D7ADF4249FC5EF00BA1C34 /* GetLoginData.swift in Sources */,
 				F52770EF249E5730005C5DF2 /* TransactionsTableViewCell.swift in Sources */,
 				F52770CE249D1302005C5DF2 /* SceneDelegate.swift in Sources */,

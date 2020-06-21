@@ -38,8 +38,6 @@ class DetailViewController: UIViewController{
 
     @IBAction func doLogoutButton(_ sender: Any) {
     
-     //Quando o usuário usar o botão de logOff, o usuário não ficara salvo
-        UserDefaults.standard.set(false, forKey: "isUserAlreadyLogged")
         
         self.navigationController?.popToRootViewController(animated: true)
         

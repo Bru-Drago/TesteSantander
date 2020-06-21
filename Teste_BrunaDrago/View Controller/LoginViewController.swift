@@ -16,16 +16,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passowordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-     
+     var userLoginInfo = userManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // UserDefaults
-        if UserDefaults.standard.bool(forKey:"isUserAlreadyLogged") == true{
-            let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailVC") as! DetailViewController
-                       self.navigationController?.pushViewController(detailVC, animated:false)
-        }
+        userTextField.text = userLoginInfo.getStored()
+        
+    
     }
     
 
@@ -38,7 +35,7 @@ class LoginViewController: UIViewController {
         }
         
         // apagar senha do text field
-        userTextField.text = nil
+        //userTextField.text = nil
         passowordTextField.text = nil
         
         
@@ -55,8 +52,8 @@ class LoginViewController: UIViewController {
         
         
         if passIsValid  && userIsValid && accessIsValid{
-           //salvar ultimo usuario logado
-            UserDefaults.standard.set(true, forKey: "isUserAlreadyLogged")
+            
+            userLoginInfo.storeUser(user: user!)
             
             let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailVC") as! DetailViewController
             
