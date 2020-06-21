@@ -12,6 +12,7 @@ class DetailViewController: UIViewController{
     
     
 
+    @IBOutlet weak var agencyNumberLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var accountNumberLabel: UILabel!
@@ -19,30 +20,34 @@ class DetailViewController: UIViewController{
     
     var operations = [StatementList]()
     var detail:DetailService?
+    var userData:LoginData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadDataView()
+        
         //Atribuir o delegate e o datasource
         tableView.delegate = self
         tableView.dataSource = self
         
         //Chamando o método que irá fazer o GET dos dados das operações
-        getData()
+        getData(userID: userData!.userid)
     }
     
 
     @IBAction func doLogoutButton(_ sender: Any) {
     
-     //TODO: - depois de configurar o userdefaults, fazer o logout dele
+     //Quando o usuário usar o botão de logOff, o usuário não ficara salvo
+        UserDefaults.standard.set(false, forKey: "isUserAlreadyLogged")
         
         self.navigationController?.popToRootViewController(animated: true)
         
     }
-    
     //Mark: - Método Get
-    func getData(){
-            let urlJsonString = "https://bank-app-test.herokuapp.com/api/statements/1"
+    func getData(userID: Int){
+        
+            let urlJsonString = "https://bank-app-test.herokuapp.com/api/statements/\(userID)"
             
             let url = URL(string: urlJsonString)
             
@@ -67,7 +72,23 @@ class DetailViewController: UIViewController{
                 
             }.resume()
             
-            
+        }
+    func loadDataView(){
+        if let name = userData?.name {
+           clientNameLabel.text = name
+        }
+        if let accountNumber = userData?.account {
+           accountNumberLabel.text = accountNumber
+        }
+        if let accountBalance = userData?.balance {
+            //accountBalanceLabel.text = "R$\(accountBalance)"
+            accountBalanceLabel.text = String(accountBalance.currencyFormat)
+        }
+        if let agency = userData?.agency {
+            agencyNumberLabel.text = agency
+        }
+        
+        
         }
     }
 
@@ -82,13 +103,17 @@ extension DetailViewController:UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath)as! TransactionsTableViewCell
         
         cell.operationLabel.text = operations[indexPath.row].title
-        cell.dateLabel.text = operations[indexPath.row].date
+        
+        //Formatando a data
+        var t = operations[indexPath.row].date
+        cell.dateLabel.text = t?.dateFormat
+        
         cell.descriptionLabel.text = operations[indexPath.row].desc
         
-        let amount = String(format: "%.2f", operations[indexPath.row].value!)
-        cell.amountLabel.text = "R$\(amount)"
-        
+        //Formatando a currência do valor
+         let a = operations[indexPath.row].value
+        cell.amountLabel.text = a?.currencyFormat
         
         return cell
     }
-}
+ }

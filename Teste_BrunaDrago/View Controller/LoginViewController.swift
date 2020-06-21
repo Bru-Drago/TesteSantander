@@ -21,7 +21,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // UserDefaults
+        if UserDefaults.standard.bool(forKey:"isUserAlreadyLogged") == true{
+            let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailVC") as! DetailViewController
+                       self.navigationController?.pushViewController(detailVC, animated:false)
+        }
     }
     
 
@@ -29,6 +33,9 @@ class LoginViewController: UIViewController {
         
         var user = userTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         var password = passowordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if user == nil && password == nil{
+            return
+        }
         
         // apagar senha do text field
         userTextField.text = nil
@@ -37,10 +44,23 @@ class LoginViewController: UIViewController {
         
         var passIsValid = Password(password: password!).isValid()
         var userIsValid = UserValidation(user: user!).isValid()
+        let userData = getLoginData().getData(user: user!, password: password!)
         
-        if passIsValid  && userIsValid {
-           //Se as condições para o Login forem atendidas , ir para a tela de Detalhes
+        var accessIsValid = false
+        
+        if userData.statusCode == 200{
+            accessIsValid = true
+        }
+        
+        
+        
+        if passIsValid  && userIsValid && accessIsValid{
+           //salvar ultimo usuario logado
+            UserDefaults.standard.set(true, forKey: "isUserAlreadyLogged")
+            
             let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailVC") as! DetailViewController
+            
+            detailVC.userData = userData
             self.navigationController?.pushViewController(detailVC, animated: true)
         }else{
             showAlert()
