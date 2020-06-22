@@ -80,12 +80,14 @@
 		F52770CA249D1302005C5DF2 /* Teste_BrunaDrago */ = {
 			isa = PBXGroup;
 			children = (
-				F5D7ADEC249E93E100BA1C34 /* Service */,
-				F52770ED249E56E1005C5DF2 /* Model */,
-				F52770E8249D2FB0005C5DF2 /* View Controller */,
-				F52770E7249D2F8A005C5DF2 /* Storyboards */,
-				F52770CB249D1302005C5DF2 /* AppDelegate.swift */,
 				F52770CD249D1302005C5DF2 /* SceneDelegate.swift */,
+				F52770CB249D1302005C5DF2 /* AppDelegate.swift */,
+				F52770E7249D2F8A005C5DF2 /* Storyboards */,
+				F5D7ADEC249E93E100BA1C34 /* Service */,
+				F52770E8249D2FB0005C5DF2 /* View Controller */,
+				F52770ED249E56E1005C5DF2 /* Model */,
+				F5D7ADFE24A000A100BA1C34 /* View */,
+				F5D7ADFD24A0004500BA1C34 /* Extensions */,
 				F52770D4249D1315005C5DF2 /* Assets.xcassets */,
 				F52770DF249D141D005C5DF2 /* Logo.png */,
 				F52770E3249D150C005C5DF2 /* logout 3.png */,
@@ -108,13 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F52770E9249D306E005C5DF2 /* LoginViewController.swift */,
-				F5D7ADFB249FF81400BA1C34 /* SaveUser.swift */,
 				F52770EB249D3478005C5DF2 /* DetailViewController.swift */,
-				F5D7ADEA249E86A700BA1C34 /* UserValidation.swift */,
-				F5D7ADE8249E7F5800BA1C34 /* Password.swift */,
-				F5D7ADF1249FC54A00BA1C34 /* LoginData.swift */,
-				F5D7ADF3249FC5EF00BA1C34 /* GetLoginData.swift */,
-				F5D7ADF9249FDD2800BA1C34 /* extensions.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -122,7 +118,11 @@
 		F52770ED249E56E1005C5DF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F52770EE249E572F005C5DF2 /* TransactionsTableViewCell.swift */,
+				F5D7ADFB249FF81400BA1C34 /* SaveUser.swift */,
+				F5D7ADEA249E86A700BA1C34 /* UserValidation.swift */,
+				F5D7ADE8249E7F5800BA1C34 /* Password.swift */,
+				F5D7ADF1249FC54A00BA1C34 /* LoginData.swift */,
+				F5D7ADF3249FC5EF00BA1C34 /* GetLoginData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +133,22 @@
 				F5D7ADED249E942700BA1C34 /* DetailService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F5D7ADFD24A0004500BA1C34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5D7ADF9249FDD2800BA1C34 /* extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5D7ADFE24A000A100BA1C34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F52770EE249E572F005C5DF2 /* TransactionsTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -26,6 +26,7 @@ class DetailViewController: UIViewController{
         super.viewDidLoad()
 
         loadDataView()
+        setUPTableView()
         
         //Atribuir o delegate e o datasource
         tableView.delegate = self
@@ -71,24 +72,34 @@ class DetailViewController: UIViewController{
             }.resume()
             
         }
+    //Mark : - Método para carregar informações na tela
     func loadDataView(){
         if let name = userData?.name {
            clientNameLabel.text = name
         }
         if let accountNumber = userData?.account {
-           accountNumberLabel.text = accountNumber
+           accountNumberLabel.text = "\(accountNumber) /"
         }
         if let accountBalance = userData?.balance {
             //accountBalanceLabel.text = "R$\(accountBalance)"
             accountBalanceLabel.text = String(accountBalance.currencyFormat)
         }
-        if let agency = userData?.agency {
+        if var agency = userData?.agency {
+            agency.insert(".", at:agency.index(agency.startIndex, offsetBy: 2))
+            agency.insert("-", at:agency.index(agency.startIndex, offsetBy: 9))
+            
             agencyNumberLabel.text = agency
         }
         
         
         }
+     func setUPTableView(){
+    
+        tableView.separatorStyle = .singleLine
+           tableView.showsVerticalScrollIndicator = false
+       }
     }
+
 
 extension DetailViewController:UITableViewDelegate, UITableViewDataSource{
     
@@ -98,7 +109,7 @@ extension DetailViewController:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath)as! TransactionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath) as! TransactionsTableViewCell
         
         cell.operationLabel.text = operations[indexPath.row].title
         
